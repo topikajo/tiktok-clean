@@ -1,0 +1,8 @@
+{
+  "packageName": "com.zhiliaoapp.musically",
+  "versionCode": 2024701042,
+  "versionName": "47.1.4-clean.3",
+  "sha256": "REPLACE_WITH_FINAL_SIGNED_APK_SHA256",
+  "apkUrls": ["https://YOUR_PRIMARY_HOST/TikTok_Clean_Universal.apk", "https://YOUR_MIRROR/TikTok_Clean_Universal.apk"],
+  "notes": "Описание изменений новой сборки"
+}

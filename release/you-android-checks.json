@@ -1,0 +1,39 @@
+{
+  "apk_sha256": "f2f4befe66c6a9cae3c1bceb2d1c728d0ea8a9a62584d7e5379cd0972b39117c",
+  "versionCode": 2024608033,
+  "avd": "TikTokAudit",
+  "results": {
+    "policy": {
+      "passed": true,
+      "log": "you-android-results.txt",
+      "cases": 30
+    },
+    "stress": {
+      "passed": true,
+      "log": "you-android-stress-fixed.txt",
+      "result": {
+        "scope": "Installed APK helpers, actual Aweme class and Android UI queue; no real feed, decoder or GPU",
+        "mode": "fixed",
+        "frame_pause_callbacks": 20000,
+        "frame_pending_messages": 1,
+        "frame_pending_after_resume": 0,
+        "frame_queue_test_ms": 2,
+        "reflection_operations": 100000,
+        "reflection_total_ms": 28.56922,
+        "reflection_p50_us": 0.164,
+        "reflection_p95_us": 0.37,
+        "reflection_p99_us": 1.142,
+        "reflection_max_us": 430.563,
+        "heap_before_bytes": 18288512,
+        "heap_after_bytes": 24711040,
+        "gc_collections": 0,
+        "main_heartbeat_verified": true
+      }
+    },
+    "updates": {
+      "passed": true,
+      "log": "you-android-update-results.txt",
+      "cases": 20
+    }
+  }
+}

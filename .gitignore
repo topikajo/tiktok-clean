@@ -1,0 +1,17 @@
+analysis/
+others/
+originals/
+output/
+tools/
+__pycache__/
+*.jks
+*.keystore
+*.apk
+*.part
+patches/
+*.pem
+*.key
+password.txt
+.env
+.env.*
+*.log

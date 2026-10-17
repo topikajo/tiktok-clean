@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="mod.privacy.stress">
+  <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="36" />
+  <application android:label="TikTok Clean disposable stress probe" android:debuggable="true" />
+  <instrumentation android:name="mod.privacy.stress.PrivacyStressInstrumentation" android:targetPackage="com.zhiliaoapp.musically" />
+</manifest>

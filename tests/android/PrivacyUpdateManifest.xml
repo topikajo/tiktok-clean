@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="mod.privacy.updateprobe">
+  <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="36" />
+  <application android:label="Disposable update probe" android:debuggable="true" />
+  <instrumentation android:name="mod.privacy.updateprobe.PrivacyUpdateInstrumentation" android:targetPackage="com.zhiliaoapp.musically" />
+</manifest>

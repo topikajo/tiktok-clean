@@ -1,0 +1,542 @@
+{
+  "file": "C:\\projects\\tictok mod\\output\\TikTok_Clean_46.8.3_You_Privacy_ARM64.apk",
+  "source": "C:\\projects\\tictok mod\\others\\TikTok_You-4.4-(46.8.3).apk",
+  "input_sha256": "c9da98aa3cfd25806cd08a456ca39bc2ffb4b8d3efb129de7cf2c49795fedb17",
+  "sha256": "f2f4befe66c6a9cae3c1bceb2d1c728d0ea8a9a62584d7e5379cd0972b39117c",
+  "size": 381670326,
+  "versionCode": 2024608033,
+  "baseVersion": "46.8.3",
+  "abis": [
+    "arm64-v8a"
+  ],
+  "changes": [
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "flush()V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "flushAsync()V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onActivityPause()V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onActivityResumed(Landroid/app/Activity;I)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onActivityResumed(Ljava/lang/String;I)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onEvent(Ljava/lang/String;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onEvent(Ljava/lang/String;Ljava/lang/String;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJ)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onEventV3(Ljava/lang/String;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onEventV3(Ljava/lang/String;Landroid/os/Bundle;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onEventV3(Ljava/lang/String;Lorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onEventV3WithView(Landroid/view/View;Ljava/lang/String;Ljava/lang/String;Lorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onPause(Landroid/content/Context;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "method": "onResume(Landroid/content/Context;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "activeUser(Landroid/content/Context;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "addAppCount()V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "com_ss_android_common_applog_AppLog__onEvent$___twin___(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJZLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "com_ss_android_common_applog_AppLog_com_ss_android_ugc_aweme_feed_lancet_AppLogLancet_onEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJZLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "com_ss_android_common_applog_AppLog_com_ss_android_ugc_aweme_legoImp_task_InitModules_onEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJZLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "com_ss_android_common_applog_AppLog_com_ss_android_ugc_aweme_localservice_passthrough_hook_LSMobLancet_onEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJZLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "com_ss_android_common_applog_AppLog_com_ss_android_ugc_aweme_net_lancet_AppLogLancet_onEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJZLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "flush()V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "onActivityCreate(Landroid/content/Context;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "onEvent(Landroid/content/Context;Ljava/lang/String;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "onEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "onEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "onEvent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJZLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "onEventInternal(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJZLorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "onPause(Landroid/content/Context;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "onResume(Landroid/content/Context;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "method": "recordMiscLog(Landroid/content/Context;Ljava/lang/String;Lorg/json/JSONObject;)V",
+      "change": "Discard analytics events before queueing; preserve initialization/device registration"
+    },
+    {
+      "class": "LX/03RH;",
+      "method": "LLLILZ(LX/04PL;)V",
+      "change": "Discard events at the concrete AppLog receiver before observers, cache and database"
+    },
+    {
+      "class": "Lcom/bytedance/applog/priority/PriorityWrapper;",
+      "method": "LIZJ(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+      "change": "Disable native priority analytics sessions, start and flush"
+    },
+    {
+      "class": "Lcom/bytedance/applog/priority/PriorityWrapper;",
+      "method": "LIZLLL()V",
+      "change": "Disable native priority analytics sessions, start and flush"
+    },
+    {
+      "class": "Lcom/bytedance/applog/priority/PriorityWrapper;",
+      "method": "LJ()V",
+      "change": "Disable native priority analytics sessions, start and flush"
+    },
+    {
+      "class": "Lcom/bytedance/applog/priority/PriorityWrapper;",
+      "method": "LJI(JLjava/lang/String;Ljava/lang/String;Z)V",
+      "change": "Disable native priority analytics sessions, start and flush"
+    },
+    {
+      "class": "Lcom/bytedance/applog/priority/PriorityWrapper;",
+      "method": "LJFF(I)Z",
+      "change": "No priority analytics event eligibility"
+    },
+    {
+      "class": "Lcom/bytedance/applog/priority/PriorityWrapper;",
+      "method": "LJII(ILjava/lang/String;LX/0897;)Z",
+      "change": "Do not collect or forward native priority events"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "logEvent(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "logEvent(Landroid/content/Context;Ljava/lang/String;Ljava/util/Map;Lcom/appsflyer/attribution/AppsFlyerRequestListener;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "sendAdRevenue(Landroid/content/Context;Ljava/util/Map;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "sendPushNotificationData(Landroid/app/Activity;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "setCustomerUserId(Ljava/lang/String;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "setUserEmails(Lcom/appsflyer/AppsFlyerProperties$EmailsCryptType;[Ljava/lang/String;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "setUserEmails([Ljava/lang/String;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "start(Landroid/content/Context;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "start(Landroid/content/Context;Ljava/lang/String;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "start(Landroid/content/Context;Ljava/lang/String;Lcom/appsflyer/attribution/AppsFlyerRequestListener;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "updateServerUninstallToken(Landroid/content/Context;Ljava/lang/String;)V",
+      "change": "Disable AppsFlyer attribution and event reporting"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "init(Ljava/lang/String;Lcom/appsflyer/AppsFlyerConversionListener;Landroid/content/Context;)Lcom/appsflyer/AppsFlyerLib;",
+      "change": "Do not initialize attribution SDK"
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "method": "getAppsFlyerUID(Landroid/content/Context;)Ljava/lang/String;",
+      "change": "No AppsFlyer installation identifier"
+    },
+    {
+      "class": "Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;",
+      "method": "getAdvertisingIdInfo(Landroid/content/Context;)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;",
+      "change": "Do not connect to advertising ID service; return blank ID with limit-tracking=true"
+    },
+    {
+      "class": "Lcom/google/firebase/analytics/FirebaseAnalytics;",
+      "method": "setCurrentScreen(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;)V",
+      "change": "Disable Firebase automatic screen reporting; permanent analytics deactivation in manifest"
+    },
+    {
+      "class": "Lcom/bytedance/retrofit2/client/Request;",
+      "change": "Apply narrow telemetry URL denylist before transport stores URL",
+      "sites": 2
+    },
+    {
+      "class": "Lcom/ttnet/org/chromium/net/impl/CronetUrlRequest;",
+      "change": "Apply narrow telemetry URL denylist before transport stores URL",
+      "sites": 1
+    },
+    {
+      "class": "Lokhttp3/Request;",
+      "change": "Apply denylist to the actual parsed OkHttp destination"
+    },
+    {
+      "class": "X\\02zM.smali",
+      "change": "Require foreground user action; preserve real grant/denial callbacks",
+      "sites": 1
+    },
+    {
+      "class": "X\\18yb.smali",
+      "change": "Require foreground user action; preserve real grant/denial callbacks",
+      "sites": 1
+    },
+    {
+      "class": "com\\bytedance\\ies\\powerpermissions\\FakeFragment.smali",
+      "change": "Require foreground user action; preserve real grant/denial callbacks",
+      "sites": 1
+    },
+    {
+      "class": "com\\bytedance\\scene\\SceneActivityCompatibilityLayerFragment.smali",
+      "change": "Require foreground user action; preserve real grant/denial callbacks",
+      "sites": 1
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/app/host/AwemeHostApplication;",
+      "method": "onCreate()V",
+      "change": "Install permission UX without jobs, telemetry or account collection"
+    },
+    {
+      "class": "LX/07ss;",
+      "method": "LJJI(Lcom/ss/android/ugc/aweme/feed/model/FeedItemList;)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/feed/adapter/VideoViewCell;",
+      "method": "LJIILIIL(I)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/feed/adapter/VideoViewCell;",
+      "method": "onPageSelected(I)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/feed/adapter/VideoViewCell;",
+      "method": "onRenderFirstFrame(LX/09Wp;)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/feed/adapter/VideoViewCell;",
+      "method": "onPlayProgressChange(F)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/feed/adapter/VideoViewCell;",
+      "method": "onPausePlay(Ljava/lang/String;)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/feed/adapter/VideoViewCell;",
+      "method": "onResumePlay(Ljava/lang/String;)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/common/widget/VerticalViewPager;",
+      "method": "LJJIL(IZZI)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/inbox/InboxShellFragment;",
+      "method": "onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/inbox/InboxShellFragment;",
+      "method": "onResume()V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "Lcom/ss/android/ugc/aweme/notification/sysnotice/SystemNotificationContainerFragment;",
+      "method": "onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V",
+      "change": "Local current-video retention / clean frame export hooks; native behavior is preserved"
+    },
+    {
+      "class": "La/g;",
+      "method": "m()La/e;",
+      "change": "Load only the bundled, hash-checked payload; ignore foreign downloaded slots"
+    },
+    {
+      "class": "Lcom/windukk/stable/DynamicUpdates;",
+      "method": "importPackage(Landroid/content/Context;Ljava/io/File;)V",
+      "change": "Disable importing foreign dynamic executable code"
+    },
+    {
+      "class": "LZ/pb;",
+      "method": "a(Z)LZ/ob;",
+      "change": "No third-party update/statistics request"
+    },
+    {
+      "class": "LZ/pb;",
+      "method": "a(Landroid/content/Context;)Ljava/util/Map;",
+      "change": "No Android ID or X-SSAID header"
+    },
+    {
+      "class": "LZ/pb;",
+      "method": "a(ZLZ/nb;)V",
+      "change": "No startup executor work; deliver up-to-date state to explicit UI callback"
+    },
+    {
+      "class": "LZ/ua;",
+      "change": "Permanently disable third-party statistics/OTA; retain ad hiding, skip obsolete consent dialog and default automatic chat nudges to off"
+    },
+    {
+      "class": "LZ/le;",
+      "method": "n()Landroid/widget/LinearLayout;",
+      "change": "Replace obsolete statistics/OTA toggles with honest privacy controls"
+    },
+    {
+      "class": "LZ/l1;",
+      "method": "b(Landroid/content/Context;)V",
+      "change": "Disable background supporter price fetch"
+    },
+    {
+      "class": "LZ/l1;",
+      "method": "f()V",
+      "change": "Disable startup supporter badge fetch; bundled fallback is retained"
+    },
+    {
+      "class": "LZ/p;",
+      "method": "b(Ljava/lang/String;Ljava/lang/String;ILjava/util/Map;Ljava/lang/String;)LZ/o;",
+      "change": "Guard additional foreign mod API calls without blocking TikTok media CDN requests"
+    },
+    {
+      "class": "Lcom/windukk/mod/Main;",
+      "method": "a(Landroid/content/Context;)V",
+      "change": "Remove original mod signer rejection while keeping native feature initialization"
+    },
+    {
+      "class": "LZ/rg;",
+      "method": "a()V",
+      "change": "Disable original mod full-screen update advertisements"
+    },
+    {
+      "class": "LZ/rg;",
+      "method": "a(Z)V",
+      "change": "Disable original mod full-screen update advertisements"
+    },
+    {
+      "class": "LZ/rg;",
+      "method": "b()V",
+      "change": "Disable original mod full-screen update advertisements"
+    },
+    {
+      "class": "LZ/rg;",
+      "method": "b(Z)V",
+      "change": "Disable original mod full-screen update advertisements"
+    },
+    {
+      "entry": "lib/arm64-v8a/libttmod.so",
+      "virtual_address": "0x3b4c8",
+      "file_offset": 242888,
+      "before": "1f2003d528173b10",
+      "after": "2000805233000014",
+      "change": "Bypass signer rejection notifier and process termination; return true"
+    },
+    {
+      "entry": "lib/arm64-v8a/libttmod.so",
+      "virtual_address": "0x3e478",
+      "file_offset": 255096,
+      "before": "e10b40f9",
+      "after": "36000014",
+      "change": "Bypass watchdog notifier and kill; preserve the normal native initializer"
+    },
+    {
+      "entry": "lib/arm64-v8a/libttmod.so",
+      "virtual_address": "0x3e4d0",
+      "file_offset": 255184,
+      "before": "1f2003d5",
+      "after": "20000014",
+      "change": "Bypass second watchdog rejection branch"
+    }
+  ],
+  "removed_permissions": [
+    "android.permission.CHANGE_WIFI_STATE",
+    "com.oplus.ocs.permission.third",
+    "com.oplus.ocs.permission.third",
+    "android.permission.SYSTEM_ALERT_WINDOW",
+    "android.permission.DETECT_SCREEN_RECORDING",
+    "android.permission.ACCESS_LOCAL_NETWORK",
+    "android.permission.DETECT_SCREEN_CAPTURE",
+    "android.permission.REORDER_TASKS",
+    "android.permission.ACCESS_WIFI_STATE",
+    "com.android.launcher.permission.READ_SETTINGS",
+    "com.orange.update.permission.READ_ATTRIBUTION",
+    "com.samsung.android.mapsagent.permission.READ_APP_INFO",
+    "com.tiktok.preload.permission.IDENTIFY",
+    "com.tiktok.manager.SYS_START_PERMISSION",
+    "android.permission.ACCESS_MEDIA_LOCATION",
+    "android.permission.READ_MEDIA_AUDIO",
+    "android.permission.NFC",
+    "com.zhiliao.musically.livewallpaper.permission.wallpaperplugin",
+    "com.huawei.appmarket.service.commondata.permission.GET_COMMON_DATA",
+    "android.permission.USE_FULL_SCREEN_INTENT",
+    "android.permission.SET_WALLPAPER",
+    "android.permission.USE_EXACT_ALARM"
+  ],
+  "permission_request_sites": 4,
+  "modified_entries": [
+    "AndroidManifest.xml",
+    "assets/tty/bundled/classes.dex",
+    "assets/tty/bundled/manifest.json",
+    "classes.dex",
+    "classes2.dex",
+    "classes24.dex",
+    "classes3.dex",
+    "classes33.dex",
+    "classes39.dex",
+    "classes4.dex",
+    "classes47.dex",
+    "classes5.dex",
+    "classes54.dex",
+    "lib/arm64-v8a/libttmod.so"
+  ],
+  "extra_dex": "classes56.dex",
+  "preserved_entries": 26478,
+  "signature_verified": true,
+  "zip_16k_alignment_verified": true,
+  "patch_directory": "C:\\projects\\tictok mod\\patches\\you-privacy\\1792223829193658500",
+  "class_sets_preserved": true,
+  "native_libraries_unchanged": false,
+  "native_patch_bytes": 16,
+  "full_app_runtime_verified": false,
+  "account_login_verified": false,
+  "inherited_duplicate_classes": {
+    "Landroidx/startup/InitializationProvider;": 2
+  },
+  "helper_source_sha256": {
+    "src/mod/privacy/CachedReflect.java": "d8a19795098fa0dffc85d531a8e42101b324ea3daa78e8cc9b3f153d3dfed8b8",
+    "src/mod/privacy/FrameActions.java": "44a44b9bd6658298f46a8ef57bdc648696915bad3a8d8b864d2217e5da48577b",
+    "src/mod/privacy/NativeRefresh.java": "5c4f452b69fca083babc44c498be8490c3109fd06009b330b7fb14e49099434a",
+    "src/mod/privacy/PermissionPolicy.java": "a01ffa7ae3e326561600051f9835c6f17eff081c9ef8668c3547af7ba238efa9",
+    "src/mod/privacy/PrivacyNet.java": "9751d6a7869d28891dd9e5fb5ed1b7f45457546c13f057eeb44418ce713d453b",
+    "src/mod/privacy/PrivacyRuntime.java": "cd4395553e269d932777acc0fbf7479621981cb861b891f582eb9a9240699d5e",
+    "src/mod/privacy/RefreshPolicy.java": "c7782331e51f7b0fd5592c89fb1d9b8d55b347eefd409937f0438ea9427dd1f9",
+    "src/mod/privacy/UpdateChannel.java": "6a038aaafa976d51f64c7dcf2dd3a2a85c3d369ba03615f3df0fe44d239ec693",
+    "src/mod/privacy/UpdatePolicy.java": "9588e57f9bb775c0ca74a2a8b39e1c1dbe8b29a6048d1520fc19099ca3a1c54e"
+  },
+  "normal_startup_verified": true
+}

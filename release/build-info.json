@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-13",
+  "status": "experimental-phone-and-live-account-validation-pending",
+  "published": false,
+  "update_feed_configured": false,
+  "jvm_tests": 45,
+  "android_harness_checks": 31,
+  "auth_routing": "google-browser-provider; credential alias normalized; original OAuth verification retained",
+  "versionCode": 2024701041,
+  "apks": [
+    {
+      "file": "output/TikTok_Clean_47.1.4_Universal.apk",
+      "sha256": "0baef3eea84a1c0cc32e806a73d59aeaaeb937b842e6ebaacf089cbe102ebdef",
+      "size": 508546349,
+      "input_sha256": "4226ed5d3031b68208c29f62d80ac421b281fc74201bc4163d98e442d0991a40",
+      "modified_dex": [
+        "AndroidManifest.xml",
+        "classes.dex",
+        "classes2.dex",
+        "classes21.dex",
+        "classes24.dex",
+        "classes3.dex",
+        "classes35.dex",
+        "classes4.dex",
+        "classes5.dex",
+        "classes6.dex",
+        "classes9.dex"
+      ],
+      "preserved_entries": 26619,
+      "signature_verified": true,
+      "zip_16k_alignment_verified": true,
+      "class_verification": {
+        "file": "TikTok_Clean_47.1.4_Universal.apk",
+        "classes": 475216,
+        "custom_classes": 46,
+        "duplicates": [],
+        "test_class_leaks": [],
+        "missing_source_classes": []
+      }
+    },
+    {
+      "file": "output/TikTok_Central_v47.1.7_Clean.apk",
+      "sha256": "e3821bedb9a0011f9e0ebeaa937a2ea31bc5794428629925eaf942648af38487",
+      "size": 399650386,
+      "input_sha256": "bb93b32bcaf4b488e1396e8d274124f9fc6114e99c498afddd0b7559b4ebacf5",
+      "modified_dex": [
+        "classes28.dex",
+        "classes33.dex",
+        "classes34.dex",
+        "classes41.dex"
+      ],
+      "preserved_entries": 22287,
+      "signature_verified": true,
+      "zip_16k_alignment_verified": true,
+      "class_verification": {
+        "file": "TikTok_Central_v47.1.7_Clean.apk",
+        "classes": 359889,
+        "custom_classes": 1,
+        "duplicates": [],
+        "test_class_leaks": [],
+        "missing_source_classes": []
+      }
+    },
+    {
+      "file": "output/TikTok_Platinum_v47.1.7_Clean_arm8.apk",
+      "sha256": "4454b6064e8951f66e36dbf2e9c98d20915d9484636a6ee014e4b505542febbe",
+      "size": 236491459,
+      "input_sha256": "72b39076c6d1ab056617fa6e2c76003214d317c9170964fc90c5ee99cbbc7cfd",
+      "modified_dex": [
+        "classes16.dex",
+        "classes37.dex"
+      ],
+      "preserved_entries": 19621,
+      "signature_verified": true,
+      "zip_16k_alignment_verified": true,
+      "class_verification": {
+        "file": "TikTok_Platinum_v47.1.7_Clean_arm8.apk",
+        "classes": 313989,
+        "custom_classes": 1,
+        "duplicates": [],
+        "test_class_leaks": [],
+        "missing_source_classes": []
+      }
+    },
+    {
+      "file": "output/TikTok_Private_Plus_v47.1.7_Clean_arm8.apk",
+      "sha256": "0f707ffcad24020fbf8110aedee4249d932176d9655dfcb96473b17657547b77",
+      "size": 355368156,
+      "input_sha256": "ce26ebb3e28fff15a399c9c86eb6376b2fb9d416f7933a57c1cbf1a0f8ae6b69",
+      "modified_dex": [
+        "classes16.dex",
+        "classes32.dex",
+        "classes42.dex"
+      ],
+      "preserved_entries": 19829,
+      "signature_verified": true,
+      "zip_16k_alignment_verified": true,
+      "class_verification": {
+        "file": "TikTok_Private_Plus_v47.1.7_Clean_arm8.apk",
+        "classes": 278077,
+        "custom_classes": 1,
+        "duplicates": [],
+        "test_class_leaks": [],
+        "missing_source_classes": []
+      }
+    },
+    {
+      "file": "output/TikTok_Platinum_v47.1.7_Clean_arm7.apk",
+      "sha256": "43cae1ab8e1a15b83e530672fd7dd9da687b6281ac4af511a79a73cd3b44ef51",
+      "size": 224838509,
+      "input_sha256": "bf99c34ef235ef7b56284ffe750a96c8d40c3b2e7c3ca1ce7fd085df32df4151",
+      "modified_dex": [
+        "classes16.dex",
+        "classes37.dex"
+      ],
+      "preserved_entries": 19617,
+      "signature_verified": true,
+      "zip_16k_alignment_verified": true,
+      "class_verification": {
+        "file": "TikTok_Platinum_v47.1.7_Clean_arm7.apk",
+        "classes": 313989,
+        "custom_classes": 1,
+        "duplicates": [],
+        "test_class_leaks": [],
+        "missing_source_classes": []
+      }
+    },
+    {
+      "file": "output/TikTok_Private_Plus_v47.1.7_Clean_arm7.apk",
+      "sha256": "e9c31328591124735cc2ee390069976b9c01b5949c14f611038c43b7ba0a2ce5",
+      "size": 339230157,
+      "input_sha256": "622f078330cc90b8abf2011438d3d8d31fb52bf61d2db5f79fc312be0efe867d",
+      "modified_dex": [
+        "classes16.dex",
+        "classes32.dex",
+        "classes42.dex"
+      ],
+      "preserved_entries": 19826,
+      "signature_verified": true,
+      "zip_16k_alignment_verified": true,
+      "class_verification": {
+        "file": "TikTok_Private_Plus_v47.1.7_Clean_arm7.apk",
+        "classes": 278077,
+        "custom_classes": 1,
+        "duplicates": [],
+        "test_class_leaks": [],
+        "missing_source_classes": []
+      }
+    }
+  ]
+}
