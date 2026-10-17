@@ -2,9 +2,9 @@
   "file": "C:\\projects\\tictok mod\\output\\TikTok_Clean_46.8.3_You_Privacy_ARM64.apk",
   "source": "C:\\projects\\tictok mod\\others\\TikTok_You-4.4-(46.8.3).apk",
   "input_sha256": "c9da98aa3cfd25806cd08a456ca39bc2ffb4b8d3efb129de7cf2c49795fedb17",
-  "sha256": "f2f4befe66c6a9cae3c1bceb2d1c728d0ea8a9a62584d7e5379cd0972b39117c",
+  "sha256": "1e51e908f55839ef5155876089ea991f1d8ddd3d391ea2b9c495baf45d8c4123",
   "size": 381670326,
-  "versionCode": 2024608033,
+  "versionCode": 2024608034,
   "baseVersion": "46.8.3",
   "abis": [
     "arm64-v8a"
@@ -518,7 +518,7 @@
   "preserved_entries": 26478,
   "signature_verified": true,
   "zip_16k_alignment_verified": true,
-  "patch_directory": "C:\\projects\\tictok mod\\patches\\you-privacy\\1792223829193658500",
+  "patch_directory": "C:\\projects\\tictok mod\\patches\\you-privacy\\1792225014103322600",
   "class_sets_preserved": true,
   "native_libraries_unchanged": false,
   "native_patch_bytes": 16,
@@ -537,6 +537,12 @@
     "src/mod/privacy/RefreshPolicy.java": "c7782331e51f7b0fd5592c89fb1d9b8d55b347eefd409937f0438ea9427dd1f9",
     "src/mod/privacy/UpdateChannel.java": "6a038aaafa976d51f64c7dcf2dd3a2a85c3d369ba03615f3df0fe44d239ec693",
     "src/mod/privacy/UpdatePolicy.java": "9588e57f9bb775c0ca74a2a8b39e1c1dbe8b29a6048d1520fc19099ca3a1c54e"
+  },
+  "build_inputs_sha256": {
+    "scripts/build_you_privacy.py": "6ae616dae68d6c0ed3ddce5f6fd7ea60df817e78431bb596679923353b3b3301",
+    "scripts/you_manifest.py": "e0a0473857725d5a6aea4ab3e70529bd5b8561a1552808c6356b97fed7233804",
+    "scripts/you_native.py": "a9eb1dabf47910f3417f1976b044a549b696695826af11763e54be9f88d38851",
+    "assets/clean-update-channel.json": "e3cc39eedca711cfc1b65f510809a0d9804163e6eb1963f15630d6bda2cc1f14"
   },
   "normal_startup_verified": true
 }

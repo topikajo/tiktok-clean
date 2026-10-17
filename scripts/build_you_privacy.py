@@ -6,7 +6,7 @@ from you_manifest import patch as manifest_patch
 
 SOURCE=ROOT/'others/TikTok_You-4.4-(46.8.3).apk'
 EXPECTED='c9da98aa3cfd25806cd08a456ca39bc2ffb4b8d3efb129de7cf2c49795fedb17'
-VERSION=2024608033
+VERSION=2024608034
 BUNDLE='assets/tty/bundled/classes.dex'
 OUT=ROOT/'output/TikTok_Clean_46.8.3_You_Privacy_ARM64.apk'
 WORK=ROOT/'analysis/you-build'
@@ -289,5 +289,6 @@ report={'file':str(OUT),'source':str(SOURCE),'input_sha256':EXPECTED,'sha256':sh
  'class_sets_preserved':True,'native_libraries_unchanged':False,'native_patch_bytes':sum(len(bytes.fromhex(item['after'])) for item in native_edits),'full_app_runtime_verified':False,'account_login_verified':False}
 report['inherited_duplicate_classes']={c:n for c,n in base_counts.items() if n>1}
 report['helper_source_sha256']=helper_hashes
+report['build_inputs_sha256']={p:sha(ROOT/p) for p in ['scripts/build_you_privacy.py','scripts/you_manifest.py','scripts/you_native.py','assets/clean-update-channel.json']}
 (ROOT/'release/you-privacy-build.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
 print(json.dumps({k:report[k] for k in ['file','sha256','size','versionCode','preserved_entries','permission_request_sites']},indent=2),flush=True)

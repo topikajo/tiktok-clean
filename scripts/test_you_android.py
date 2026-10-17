@@ -17,7 +17,7 @@ for name,pointer,component,log in [
  ('updates','you-update-probe-path.txt','mod.privacy.updateprobe/mod.privacy.updateprobe.PrivacyUpdateInstrumentation','you-android-update-results.txt')]:
     probe=pathlib.Path((root/'analysis'/pointer).read_text(encoding='utf8').strip());print(run('install','-r',probe).strip(),flush=True)
     run('shell','am','force-stop','com.zhiliaoapp.musically')
-    output=run('shell','am','instrument','-w','-r','-e','mode','fixed',component)
+    output=run('shell','am','instrument','-w','-r','-e','mode','fixed','-e','expected_version',build['versionCode'],component)
     (root/'analysis'/log).write_text(output,encoding='utf8')
     print(name+': '+output[-3500:],flush=True)
     assert 'INSTRUMENTATION_CODE: -1' in output and 'INSTRUMENTATION_RESULT: failure=' not in output and 'INSTRUMENTATION_FAILED' not in output,name

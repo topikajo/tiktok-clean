@@ -1,3 +1,3 @@
 {
-  "feeds": ["https://github.com/topikajo/tiktok-clean/releases/latest/download/update.json"]
+  "feeds": ["https://raw.githubusercontent.com/topikajo/tiktok-clean/updates/update.json"]
 }

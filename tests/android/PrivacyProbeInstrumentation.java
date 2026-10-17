@@ -12,7 +12,7 @@ import dalvik.system.DexClassLoader;
 
 /** Exercises the installed release DEX with a plain Application, avoiding the base mod's native emulator crash. */
 public class PrivacyProbeInstrumentation extends Instrumentation {
-    int count;private boolean begun,appReady,configReady;
+    int count;private boolean begun,appReady,configReady;private int expectedVersion;
     static class CaptureActivity extends Activity {
         final CountDownLatch result=new CountDownLatch(1);int[] grants;
         void attach(Context context){attachBaseContext(context);}
@@ -31,7 +31,7 @@ public class PrivacyProbeInstrumentation extends Instrumentation {
     synchronized void begin(){if(begun||!appReady||!configReady)return;begun=true;new Thread(new Runnable(){public void run(){onStart();}},"PrivacyProbe").start();}
     public Application newApplication(ClassLoader loader,String name,Context context)throws InstantiationException,IllegalAccessException,ClassNotFoundException{return super.newApplication(loader,Application.class.getName(),context);}
     public void callApplicationOnCreate(Application application){super.callApplicationOnCreate(application);try{cls("mod.privacy.PrivacyRuntime").getMethod("install",Application.class).invoke(null,application);}catch(Exception e){throw new RuntimeException(e);}appReady=true;begin();}
-    public void onCreate(Bundle state){super.onCreate(state);configReady=true;begin();}
+    public void onCreate(Bundle state){super.onCreate(state);expectedVersion=Integer.parseInt(state.getString("expected_version","0"));configReady=true;begin();}
     public void onStart(){
         Bundle result=new Bundle();Uri frameUri=null;File dexFile=null;
         try {
@@ -42,7 +42,7 @@ public class PrivacyProbeInstrumentation extends Instrumentation {
             }
             check(runtime.getMethod("prefs").invoke(null) instanceof SharedPreferences,"privacy runtime installed without native bootstrap");
             PackageInfo info=context.getPackageManager().getPackageInfo(context.getPackageName(),PackageManager.GET_PERMISSIONS);
-            check(info.versionCode==2024608033,"installed release version");
+            check(expectedVersion>0&&info.versionCode==expectedVersion,"installed release version");
             java.util.List<String> permissions=java.util.Arrays.asList(info.requestedPermissions);
             check(!permissions.contains("android.permission.SYSTEM_ALERT_WINDOW"),"no overlay permission");
             check(!permissions.contains("android.permission.USE_FULL_SCREEN_INTENT"),"no full-screen notification permission");

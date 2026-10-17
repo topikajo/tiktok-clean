@@ -40,7 +40,7 @@ with zipfile.ZipFile(report['source']) as source, zipfile.ZipFile(apk) as out:
     assert meta['targetSize'] == meta['dexFiles'][0]['targetSize'] == len(bundle)
     channel=json.loads(out.read('assets/clean-update-channel.json'))
     assert channel == json.loads((root/'assets/clean-update-channel.json').read_text(encoding='utf8'))
-    assert channel['feeds'] == ['https://github.com/topikajo/tiktok-clean/releases/latest/download/update.json']
+    assert channel['feeds'] == ['https://raw.githubusercontent.com/topikajo/tiktok-clean/updates/update.json']
 policy = (root / 'analysis/you-policy-results.txt').read_text(encoding='utf8')
 android = (root / 'analysis/you-android-results.txt').read_text(encoding='utf8')
 policy_cases = int(re.search(r'PASS (\d+)', policy)[1])
@@ -52,6 +52,8 @@ assert installed_checks['apk_sha256']==sha and installed_checks['versionCode']==
 assert all(r['passed'] for r in installed_checks['results'].values())
 for name,digest in report['helper_source_sha256'].items():
     assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,'Source changed after build: '+name
+for name,digest in report['build_inputs_sha256'].items():
+    assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,'Build input changed: '+name
 result = {
     'apk_sha256': sha,
     'jvm_policy_cases': policy_cases,

@@ -1,10 +1,10 @@
 {
   "packageName": "com.zhiliaoapp.musically",
-  "versionCode": 2024608033,
-  "versionName": "46.8.3 Clean 3",
-  "sha256": "f2f4befe66c6a9cae3c1bceb2d1c728d0ea8a9a62584d7e5379cd0972b39117c",
+  "versionCode": 2024608034,
+  "versionName": "46.8.3 Clean 4",
+  "sha256": "1e51e908f55839ef5155876089ea991f1d8ddd3d391ea2b9c495baf45d8c4123",
   "apkUrls": [
-    "https://github.com/topikajo/tiktok-clean/releases/download/clean-2024608033/TikTokClean-arm64.apk"
+    "https://github.com/topikajo/tiktok-clean/releases/download/clean-2024608034/ttc-arm8.apk"
   ],
-  "notes": "Уведомление об обновлении один раз; точка во Входящих до проверенной загрузки. Устранены очередь UI и лишние поиски методов; исправлены крайние случаи обновления ленты."
+  "notes": "Короткие имена APK; технические файлы отделены от загрузок приложения. Обновления проверяются через отдельный канал."
 }

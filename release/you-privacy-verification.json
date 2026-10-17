@@ -1,5 +1,5 @@
 {
-  "apk_sha256": "f2f4befe66c6a9cae3c1bceb2d1c728d0ea8a9a62584d7e5379cd0972b39117c",
+  "apk_sha256": "1e51e908f55839ef5155876089ea991f1d8ddd3d391ea2b9c495baf45d8c4123",
   "jvm_policy_cases": 45,
   "installed_apk_harness_cases": 30,
   "installed_updater_cases": 20,
@@ -9,15 +9,15 @@
     "frame_pause_callbacks": 20000,
     "frame_pending_messages": 1,
     "frame_pending_after_resume": 0,
-    "frame_queue_test_ms": 2,
+    "frame_queue_test_ms": 1,
     "reflection_operations": 100000,
-    "reflection_total_ms": 28.56922,
+    "reflection_total_ms": 28.137046,
     "reflection_p50_us": 0.164,
-    "reflection_p95_us": 0.37,
-    "reflection_p99_us": 1.142,
-    "reflection_max_us": 430.563,
-    "heap_before_bytes": 18288512,
-    "heap_after_bytes": 24711040,
+    "reflection_p95_us": 0.366,
+    "reflection_p99_us": 1.091,
+    "reflection_max_us": 182.945,
+    "heap_before_bytes": 18198400,
+    "heap_after_bytes": 24620928,
     "gc_collections": 0,
     "main_heartbeat_verified": true
   },
@@ -64,15 +64,15 @@
   "bundled_payload_hash_verified": true,
   "update_channel": {
     "feeds": [
-      "https://github.com/topikajo/tiktok-clean/releases/latest/download/update.json"
+      "https://raw.githubusercontent.com/topikajo/tiktok-clean/updates/update.json"
     ]
   },
   "normal_startup": {
     "verified": true,
     "serial": "emulator-5580",
-    "started_at_utc": "2026-10-17T08:02:57.915017+00:00",
+    "started_at_utc": "2026-10-17T08:19:45.037206+00:00",
     "same_process_observed_seconds": 30,
-    "pid": "5736",
+    "pid": "4276",
     "launch": "COLD",
     "unsolicited_permission_dialog": false,
     "foreign_telegram_redirect": false,
