@@ -52,7 +52,13 @@ def publish_assets(tag,title,notes,names,folder,technical):
     if release is None:
         args=[gh,'release','create',tag,'--repo',repo,'--verify-tag','--draft','--title',title,'--notes-file',notes,'--latest=false']
         if technical:args.append('--prerelease')
-        run(*args);release=find_release(tag);assert release is not None
+        run(*args)
+        # A newly created draft can briefly be absent from the release list.
+        for delay in (0,1,2,4,8):
+            if delay:time.sleep(delay)
+            release=find_release(tag)
+            if release is not None:break
+        assert release is not None,'Created draft is not yet visible; retry safely'
     assert release['prerelease']==technical,'Existing release has the wrong role'
     if release['draft']:
         # Only unpublished drafts may be repaired or have an asset replaced.
