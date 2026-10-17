@@ -1,0 +1,10 @@
+{
+  "packageName": "com.zhiliaoapp.musically",
+  "versionCode": 2024701042,
+  "versionName": "47.1.4 Clean ARM7",
+  "sha256": "ecf739a8cf52eb28fc92562a2efd58ee7903b2380547fd81366cc43f8a5ee593",
+  "apkUrls": [
+    "https://github.com/topikajo/tiktok-clean/releases/download/clean-2024608034/ttc-arm7.apk"
+  ],
+  "notes": "Отдельная ARMv7-сборка на основе 47.1.4. Проверка на физическом телефоне требуется."
+}
