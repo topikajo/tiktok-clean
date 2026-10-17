@@ -41,10 +41,18 @@ def ensure_tag(tag,head):
 
 def verify_assets(release,names,folder):
     assets={asset['name']:asset for asset in release['assets']}
-    assert set(assets)==set(names),'Unexpected or missing release assets: '+release['tag_name']
+    extra={}
+    distribution=root/'release/arm32-distribution.json'
+    if tuple(names)==APK_NAMES and distribution.exists():
+        arm32=json.loads(distribution.read_text(encoding='utf8'))
+        if arm32['consumer_tag']==release['tag_name']:
+            extra={name:arm32 for name in ('ttc-arm7.apk','ttc-arm32.apk')}
+    assert set(assets)==set(names)|set(extra),'Unexpected or missing release assets: '+release['tag_name']
     for name in names:
         assert assets[name]['size']==(folder/name).stat().st_size,name
         assert assets[name].get('digest')=='sha256:'+sha(folder/name),'Uploaded digest mismatch: '+name
+    for name,expected in extra.items():
+        assert assets[name]['size']==expected['size'] and assets[name].get('digest')=='sha256:'+expected['sha256'],name
     return assets
 
 def publish_assets(tag,title,notes,names,folder,technical):
@@ -79,8 +87,9 @@ def publish_assets(tag,title,notes,names,folder,technical):
 def get_public_json(url):
     with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'TikTokClean-release-check','Cache-Control':'no-cache'}),timeout=30) as response:return json.load(response)
 
-def advance_feed(feed):
+def advance_feed(feed,filename='update.json'):
     """Use an isolated checkout; never switch or rewrite the GitHub Desktop worktree."""
+    assert filename in ('update.json','update-arm32.json'),'Unexpected update channel filename'
     checkout=root/'tools/update-channel';origin='https://github.com/'+repo+'.git'
     checkout.mkdir(parents=True,exist_ok=True)
     def git(*args,check=True):return run('git',*args,check=check,cwd=checkout)
@@ -91,7 +100,8 @@ def advance_feed(feed):
     assert git('remote','get-url','origin').stdout.strip()==origin
     assert git('symbolic-ref','--short','HEAD').stdout.strip()=='updates','Unexpected channel branch'
     assert not git('status','--porcelain').stdout.strip(),'Resolve pending channel work before publishing'
-    assert set(git('ls-files').stdout.splitlines())<={'update.json','README.md'},'Unexpected files in the channel checkout'
+    allowed={'update.json','update-arm32.json','README.md'}
+    assert set(git('ls-files').stdout.splitlines())<=allowed,'Unexpected files in the channel checkout'
     name=run('git','config','user.name').stdout.strip();email=run('git','config','user.email').stdout.strip()
     assert name and email,'Configure the Git author in the main checkout first'
     git('config','user.name',name);git('config','user.email',email)
@@ -101,31 +111,31 @@ def advance_feed(feed):
         git('fetch','origin','refs/heads/updates:refs/remotes/origin/updates')
         if has_head:git('merge','--ff-only','refs/remotes/origin/updates')
         else:git('switch','-C','updates','refs/remotes/origin/updates')
-    assert set(git('ls-files').stdout.splitlines())<={'update.json','README.md'},'Unexpected remote channel contents'
+    assert set(git('ls-files').stdout.splitlines())<=allowed,'Unexpected remote channel contents'
     assert not git('status','--porcelain').stdout.strip(),'Channel checkout changed during synchronization'
     # The first channel commit is orphaned; source history is not copied here.
-    target=checkout/'update.json'
+    target=checkout/filename
     if target.exists():
         before=json.loads(target.read_text(encoding='utf8'))
         assert before['versionCode']<=feed['versionCode'],'Refusing to roll back the update channel'
         if before['versionCode']==feed['versionCode']:assert before==feed,'Published version metadata changed'
     target.write_text(json.dumps(feed,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     readme=checkout/'README.md'
-    if not readme.exists():readme.write_text('Public TikTok Clean update channel.\n\nOnly update.json is consumed by the application. APKs and user downloads are published in the main repository Releases; no credentials or signing keys belong in this branch.\n',encoding='utf8')
-    git('add','--','update.json','README.md')
+    readme.write_text('Public TikTok Clean update channels.\n\nARM64 consumes update.json; ARMv7 consumes update-arm32.json. Each manifest has an independent version sequence. APKs and user downloads are published in repository Releases; no credentials or signing keys belong in this branch.\n',encoding='utf8')
+    git('add','--',filename,'README.md')
     staged=git('diff','--cached','--quiet',check=False)
     assert staged.returncode in (0,1),'Cannot inspect the channel index'
-    if staged.returncode:git('commit','-m','Update channel to Clean '+str(feed['versionCode']))
+    if staged.returncode:git('commit','-m',filename+': Clean '+str(feed['versionCode']))
     commit=git('rev-parse','HEAD').stdout.strip()
     git('push','origin','HEAD:refs/heads/updates')
     remote_commit=git('ls-remote','--heads','origin','refs/heads/updates').stdout.split()[0]
     assert remote_commit==commit,'Channel push did not publish the expected commit'
-    assert get_public_json('https://raw.githubusercontent.com/'+repo+'/'+commit+'/update.json')==feed
+    assert get_public_json('https://raw.githubusercontent.com/'+repo+'/'+commit+'/'+filename)==feed
     failure=None
     for delay in (0,1,2,4,8,16):
         if delay:time.sleep(delay)
         try:
-            if get_public_json(FEED_URL+'?commit='+commit)==feed:return commit
+            if get_public_json('https://raw.githubusercontent.com/'+repo+'/updates/'+filename+'?commit='+commit)==feed:return commit
             failure=RuntimeError('Public channel still serves a previous manifest')
         except (urllib.error.URLError,ValueError) as error:failure=error
     raise RuntimeError('Channel pushed but its public endpoint could not be verified') from failure
@@ -139,6 +149,13 @@ def main():
     folder=pathlib.Path((root/'analysis/public-release-path.txt').read_text(encoding='utf8').strip())
     assert folder.resolve()==(root/'output/publish'/tag).resolve(),'Unexpected prepared release folder'
     for name in APK_NAMES:assert sha(folder/name)==feed['sha256'],name
+    consumer_names=APK_NAMES
+    if (folder/'arm32-carry.json').exists():
+        carry=json.loads((folder/'arm32-carry.json').read_text(encoding='utf8'))
+        assert carry==json.loads((root/'release/arm32-distribution.json').read_text(encoding='utf8')),'Stale carried ARM32 metadata'
+        for name in ('ttc-arm7.apk','ttc-arm32.apk'):
+            assert sha(folder/name)==carry['sha256'] and (folder/name).stat().st_size==carry['size']
+        consumer_names+=('ttc-arm7.apk','ttc-arm32.apk')
     assert feed['apkUrls']==['https://github.com/'+repo+'/releases/download/'+tag+'/'+APK_NAMES[0]]
     assert json.loads((folder/'update.json').read_text(encoding='utf8'))==feed
     verification=json.loads((folder/'verification.json').read_text(encoding='utf8'));assert verification['apk_sha256']==feed['sha256'] and verification['normal_startup']['verified']
@@ -146,9 +163,9 @@ def main():
     for path,expected in {**build['helper_source_sha256'],**build['build_inputs_sha256']}.items():assert sha(root/path)==expected
     source_commit=ensure_tag(tag,head);assert ensure_tag(technical_tag,head)==source_commit
     technical=publish_assets(technical_tag,'Технические файлы · '+str(feed['versionCode']),folder/'technical-notes.md',TECHNICAL_NAMES,folder,True)
-    consumer=publish_assets(tag,'TikTok Clean '+build['baseVersion']+' · '+str(feed['versionCode']),folder/'notes.md',APK_NAMES,folder,False)
+    consumer=publish_assets(tag,'TikTok Clean '+build['baseVersion']+' · '+str(feed['versionCode']),folder/'notes.md',consumer_names,folder,False)
     latest=api('repos/'+repo+'/releases/latest');assert latest['tag_name']==tag and not latest['draft'] and not latest['prerelease'],'Another release became latest; the channel was not advanced'
-    assets=verify_assets(latest,APK_NAMES,folder);assert assets[APK_NAMES[0]]['browser_download_url']==feed['apkUrls'][0]
+    assets=verify_assets(latest,consumer_names,folder);assert assets[APK_NAMES[0]]['browser_download_url']==feed['apkUrls'][0]
     assert get_public_json('https://github.com/'+repo+'/releases/download/'+technical_tag+'/update.json')==feed
     channel_commit=advance_feed(feed)
     print(json.dumps({'release':consumer['html_url'],'technical':technical['html_url'],'apk':feed['apkUrls'][0],'feed':FEED_URL,'sha256':feed['sha256'],'commit':source_commit,'channel_commit':channel_commit},indent=2))

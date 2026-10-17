@@ -1,0 +1,118 @@
+{
+  "file": "C:\\projects\\tictok mod\\output\\TikTok_Clean_47.1.4_ARM32.apk",
+  "sha256": "ecf739a8cf52eb28fc92562a2efd58ee7903b2380547fd81366cc43f8a5ee593",
+  "size": 361718565,
+  "versionCode": 2024701042,
+  "baseVersion": "47.1.4",
+  "profile": "original-47-arm32",
+  "source": "C:\\projects\\tictok mod\\output\\TikTok_Clean_47.1.4_Universal.apk",
+  "source_sha256": "0baef3eea84a1c0cc32e806a73d59aeaaeb937b842e6ebaacf089cbe102ebdef",
+  "upstream": "C:\\projects\\tictok mod\\originals\\TikTok_47.1.4_original_apkpure.apk",
+  "upstream_sha256": "4226ed5d3031b68208c29f62d80ac421b281fc74201bc4163d98e442d0991a40",
+  "abis": [
+    "armeabi-v7a"
+  ],
+  "native_libraries": 293,
+  "elf32_arm_libraries": 265,
+  "native_libraries_byte_identical_to_official": true,
+  "omitted_foreign_abi_entries": 298,
+  "permission_request_sites": 4,
+  "removed_permissions": [
+    "android.permission.ACCESS_COARSE_LOCATION",
+    "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.CHANGE_WIFI_STATE",
+    "com.google.android.gms.permission.AD_ID",
+    "com.oplus.ocs.permission.third",
+    "com.oplus.ocs.permission.third",
+    "android.permission.SYSTEM_ALERT_WINDOW",
+    "android.permission.DETECT_SCREEN_RECORDING",
+    "android.permission.ACCESS_LOCAL_NETWORK",
+    "android.permission.DETECT_SCREEN_CAPTURE",
+    "android.permission.REORDER_TASKS",
+    "android.permission.ACCESS_WIFI_STATE",
+    "com.android.launcher.permission.READ_SETTINGS",
+    "com.orange.update.permission.READ_ATTRIBUTION",
+    "com.samsung.android.mapsagent.permission.READ_APP_INFO",
+    "com.tiktok.preload.permission.IDENTIFY",
+    "com.tiktok.manager.SYS_START_PERMISSION",
+    "android.permission.ACCESS_MEDIA_LOCATION",
+    "android.permission.READ_MEDIA_AUDIO",
+    "android.permission.NFC",
+    "com.zhiliao.musically.livewallpaper.permission.wallpaperplugin",
+    "com.huawei.appmarket.service.commondata.permission.GET_COMMON_DATA",
+    "android.permission.USE_FULL_SCREEN_INTENT",
+    "android.permission.SET_WALLPAPER"
+  ],
+  "changes": [
+    {
+      "class": "Lcom/bytedance/applog/AppLog;",
+      "change": "Discard Java analytics events before queueing",
+      "methods": 15
+    },
+    {
+      "class": "Lcom/ss/android/common/applog/AppLog;",
+      "change": "Discard Java analytics events before queueing",
+      "methods": 17
+    },
+    {
+      "class": "Lcom/bytedance/applog/priority/PriorityWrapper;",
+      "change": "Disable priority event sessions and flush",
+      "methods": 4
+    },
+    {
+      "class": "Lcom/appsflyer/internal/AFb1vSDK;",
+      "change": "Disable attribution/events",
+      "methods": 11
+    },
+    {
+      "class": "Lcom/bytedance/retrofit2/client/Request;",
+      "change": "Apply narrow analytics URL denylist to string fields",
+      "sites": 6
+    },
+    {
+      "class": "Lcom/ttnet/org/chromium/net/impl/CronetUrlRequest;",
+      "change": "Apply narrow analytics URL denylist to string fields",
+      "sites": 5
+    }
+  ],
+  "modified_entries": [
+    "AndroidManifest.xml",
+    "assets/clean-update-channel.json",
+    "classes.dex",
+    "classes2.dex",
+    "classes3.dex",
+    "classes32.dex",
+    "classes35.dex",
+    "classes36.dex",
+    "classes5.dex",
+    "classes57.dex"
+  ],
+  "signature_verified": true,
+  "zip_16k_alignment_verified": true,
+  "source_sha256s": {
+    "scripts/build_arm32_clean.py": "7b634957456bc5bc14d06f13eeaa46d263d5e2df1a2277b68993f5d79649a7fb",
+    "src/mod/arm32/Runtime32.java": "9ed1eda13988046ceb002381cbfbf81e77f249cffcf044cc52313d6c7f39d3f3",
+    "assets/clean-update-channel-arm32.json": "1133e358a38a4f4fa496f5cd2073a391428d5ed3cd0aae1f6c575206acb3f49c",
+    "src/mod/clean/AuthRouting.java": "b7a536f47514483d215752312eb8ef7d73520a90d0dee5fdfccf390bb719e74a",
+    "src/mod/clean/CleanApp.java": "60bde726ca3d901135445f6b1eaa4c35a76258f0bb6df61336a8ed248f851779",
+    "src/mod/clean/FeedAds.java": "e5f9f66f3103fee1eb97bbca9d101227890f421335d7c3bab42b3d76ef6cc20a",
+    "src/mod/clean/MessageHooks.java": "f8b287a5654e877faba51d838d09c0ff58953487a6e23274410c11514e3ac19f",
+    "src/mod/clean/NativeBridge.java": "9b2949d2d68d3051bc89f43ad1dbfeb51de767475013f39177b46ee1af73f1d8",
+    "src/mod/clean/Policy.java": "003d0be5d9e7b3ed781545ffcdb31c553e66df0f0f3ea5147b8767e62321edfc",
+    "src/mod/clean/StreakJob.java": "0371c40068a0263396d9611d304107aa9babafc29f8ab6cd1198ec5d75c2da37",
+    "src/mod/clean/UpdateChannel.java": "385f2ec354997cf929a95445eb88936cd6138ca6af387fdca2794e4b38f51cf3",
+    "src/mod/privacy/CachedReflect.java": "d8a19795098fa0dffc85d531a8e42101b324ea3daa78e8cc9b3f153d3dfed8b8",
+    "src/mod/privacy/PermissionPolicy.java": "a01ffa7ae3e326561600051f9835c6f17eff081c9ef8668c3547af7ba238efa9",
+    "src/mod/privacy/PrivacyNet.java": "9751d6a7869d28891dd9e5fb5ed1b7f45457546c13f057eeb44418ce713d453b",
+    "src/mod/privacy/UpdatePolicy.java": "9588e57f9bb775c0ca74a2a8b39e1c1dbe8b29a6048d1520fc19099ca3a1c54e",
+    "src/mod/privacy/UpdateChannel.java": "6a038aaafa976d51f64c7dcf2dd3a2a85c3d369ba03615f3df0fe44d239ec693"
+  },
+  "normal_startup_verified": false,
+  "physical_device_verified": false,
+  "account_login_verified": false,
+  "feature_limits": [
+    "No You-specific native features",
+    "Feed retention and clean-frame export not ported to ARM32",
+    "Real Google/email login and chat features need device/account validation"
+  ]
+}

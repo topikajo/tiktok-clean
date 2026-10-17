@@ -1,0 +1,29 @@
+{
+  "apk_sha256": "ecf739a8cf52eb28fc92562a2efd58ee7903b2380547fd81366cc43f8a5ee593",
+  "versionCode": 2024701042,
+  "avd": "TikTokAudit32",
+  "serial": "emulator-5582",
+  "platform_api": "30",
+  "results": {
+    "privacy_update": {
+      "passed": true,
+      "cases": 30,
+      "reflection_100000_ms": 100
+    },
+    "legacy_bindings": {
+      "passed": true,
+      "cases": 31
+    }
+  },
+  "actual_32bit_process_verified": true,
+  "native_bootstrap_in_harness": false,
+  "scope": "Installed Java helpers, real SDK models/PM/certificates/ABI and Android layout; native app startup checked separately; no live account or messages sent",
+  "probe_sha256": "822365f1dfea8065b72c81d3eb8f382c45dd76c1ec8acdd16fee602ddf7607d0",
+  "test_source_sha256": {
+    "scripts/build_arm32_probe.py": "f01c1c739e20d4b84e384be86df7ed48c8e052d73a4049db664a9f1351551f8b",
+    "scripts/test_arm32_android.py": "5b86fe6e509bf5d8e2bc60ef18d39563a4f51f7d2d1ee393b5ace2e69d5b3dc2",
+    "tests/android/Arm32ProbeInstrumentation.java": "d6b80ad68452ea612f1aa73045b621d690440b2bfdfc55ec046b8df55081484a",
+    "tests/android/Arm32ProbeManifest.xml": "4b7af19c60282bc1ab3bdf250000e2210ce2d31c692817215ecc471596e4a3b9",
+    "tests/android/ProbeInstrumentation.java": "e2510461c4390f6e75548df3e37fce291d09a3596b8149726d0dc509d4fb6203"
+  }
+}

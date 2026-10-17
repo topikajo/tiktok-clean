@@ -1,0 +1,56 @@
+{
+  "apk_sha256": "ecf739a8cf52eb28fc92562a2efd58ee7903b2380547fd81366cc43f8a5ee593",
+  "observations": [
+    {
+      "avd": "TikTokAudit32",
+      "api": "30",
+      "normal_startup_verified": false,
+      "observed_seconds": 30,
+      "same_process": true,
+      "app_ui_observed": false,
+      "arm_translation_icu_failure": true,
+      "scope": "Guest native bootstrap; no account, feed playback or messages"
+    }
+  ],
+  "normal_startup_verified": false,
+  "physical_device_verified": false,
+  "account_login_verified": false,
+  "official_arm32_baseline": {
+    "sha256": "4226ed5d3031b68208c29f62d80ac421b281fc74201bc4163d98e442d0991a40",
+    "same_android11_translation_icu_failure": true
+  },
+  "limitations": [
+    "ARM32 remains experimental until real ARMv7 phone validation",
+    "Plain-Application probes do not prove native startup",
+    "No real Google/email login, feed playback, camera or chat validation"
+  ],
+  "environment_attempts": [
+    {
+      "avd": "TikTokAudit32Api31",
+      "api": 31,
+      "supported_abis": [
+        "x86_64",
+        "arm64-v8a"
+      ],
+      "result": "No ARM32 support; APK not tested here"
+    },
+    {
+      "avd": "TikTokAuditArmNative",
+      "api": 24,
+      "guest_abi": "armeabi-v7a",
+      "emulator_version": "36.4.10",
+      "result": "Host launcher refuses ARMv7 QEMU2 guest"
+    },
+    {
+      "avd": "TikTokAuditArmNative",
+      "api": 24,
+      "guest_abi": "armeabi-v7a",
+      "emulator_version": "28.0.25 / classic Windows x86 and x86_64 host",
+      "result": "Host emulator crashes before Android boots, Windows exception 0xc0000005; APK never launched"
+    }
+  ],
+  "evidence_sha256": {
+    "arm32-final-native-logcat.txt": "ba205be580ea2631c9cf0379dc7b6b3724c8aec1fe27ef1cb7ccb348105fe018",
+    "arm32-upstream-baseline-crash.txt": "d69a312ff77a68a1468c071a93749043e45b393d606c05111027ed9d44a5c3a7"
+  }
+}

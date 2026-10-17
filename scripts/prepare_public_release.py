@@ -1,5 +1,5 @@
 """Prepare APK-only public releases and separate technical release assets."""
-import hashlib,json,pathlib,re,shutil
+import hashlib,json,pathlib,re,shutil,zipfile
 
 root=pathlib.Path(__file__).resolve().parents[1]
 repo='topikajo/tiktok-clean'
@@ -29,6 +29,22 @@ def main():
     # ARMv8 and ARM64 are aliases for this arm64-v8a build, not separate ports.
     for name in APK_NAMES:
         shutil.copyfile(apk,folder/name);assert sha(folder/name)==digest,name
+    # Carry the already checked, immutable ARMv7 binary into future consumer releases.
+    # Its independent updater continues to use the URL/version of its own publication.
+    carry_path=folder/'arm32-carry.json'
+    if carry_path.exists():carry_path.unlink()
+    arm32_note='ARMv7 / 32-битная версия пока недоступна.'
+    if (root/'release/arm32-distribution.json').exists():
+        arm32=read('release/arm32-distribution.json');arm32_build=read('release/arm32-build.json')
+        source32=pathlib.Path(arm32_build['file'])
+        assert sha(source32)==arm32['sha256']==arm32_build['sha256'] and source32.stat().st_size==arm32['size']
+        assert arm32_build['abis']==['armeabi-v7a'] and arm32_build['signature_verified']
+        with zipfile.ZipFile(source32) as archive:
+            libs=[n for n in archive.namelist() if n.startswith('lib/') and not n.endswith('/')]
+            assert libs and all(n.startswith('lib/armeabi-v7a/') for n in libs)
+        for name in ('ttc-arm7.apk','ttc-arm32.apk'):shutil.copyfile(source32,folder/name)
+        carry_path.write_text(json.dumps(arm32,indent=2)+'\n',encoding='utf8')
+        arm32_note='Также доступны ttc-arm7.apk / ttc-arm32.apk — одна отдельная ARMv7 / 32-битная сборка на основе '+arm32['baseVersion']+'. **Экспериментальная, физический телефон не проверен.** Функции You, сохранение прошлого ролика и кадра в ARM32 отсутствуют. [Проверки ARM32](https://github.com/'+repo+'/releases/tag/'+arm32['technical_tag']+').'
     base=f'https://github.com/{repo}/releases/download/{tag}'
     feed={'packageName':'com.zhiliaoapp.musically','versionCode':version,'versionName':build['baseVersion']+' Clean '+str(version-2024608030),'sha256':digest,'apkUrls':[base+'/'+APK_NAMES[0]],
           'notes':'Короткие имена APK; технические файлы отделены от загрузок приложения. Обновления проверяются через отдельный канал.'}
@@ -51,7 +67,7 @@ def main():
     (folder/'SHA256SUMS.txt').write_text(''.join(sha(folder/name)+'  '+name+'\n' for name in [*APK_NAMES,'update.json','build.json','verification.json','stress.json']),encoding='ascii')
     notes=f'''[Скачать ttc-arm8.apk]({base}/ttc-arm8.apk) · [Скачать ttc-arm64.apk]({base}/ttc-arm64.apk)
 
-Оба файла — одна и та же сборка для **ARMv8 / ARM64 (arm64-v8a)**. Достаточно скачать любой один APK. ARMv7 / 32-битная версия пока недоступна.
+Оба файла — одна и та же сборка для **ARMv8 / ARM64 (arm64-v8a)**. Достаточно скачать любой один APK. {arm32_note}
 
 TikTok Clean {build['baseVersion']} · сборка {version}. Обновление предлагается один раз; кнопка скачивания находится во «Входящих». После обновления ленты предыдущий ролик доступен одним обратным свайпом.
 

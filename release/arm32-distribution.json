@@ -1,0 +1,15 @@
+{
+  "consumer_tag": "clean-2024608034",
+  "technical_tag": "technical-arm32-2024701042",
+  "versionCode": 2024701042,
+  "baseVersion": "47.1.4",
+  "sha256": "ecf739a8cf52eb28fc92562a2efd58ee7903b2380547fd81366cc43f8a5ee593",
+  "size": 361718565,
+  "experimental": true,
+  "normal_startup_verified": false,
+  "physical_device_verified": false,
+  "assets": [
+    "ttc-arm7.apk",
+    "ttc-arm32.apk"
+  ]
+}
